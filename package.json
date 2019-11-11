@@ -1,12 +1,13 @@
 {
   "name": "color-transformer-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tools to transform colors with Javascript",
   "main": "lib/index.min.js",
   "scripts": {
     "lint": "eslint index.js",
-    "build": "uglifyjs --self -c -m -o lib/ColorTransformerUi.js",
-    "before-publish": "npm audit && npm i && npm run lint && npm run build"
+    "build": "gulp build",
+    "watch": "gulp",
+    "before-publish": "npm audit && npm run lint && npm i && npm run build"
   },
   "files": [
     "index.js"
@@ -28,7 +29,14 @@
   },
   "homepage": "https://github.com/LouisMazel/color-transformer-ui#readme",
   "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
     "eslint": "^6.6.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.2",
+    "uglify-es": "^3.3.9",
     "uglify-js": "^3.6.8"
   },
   "browserify": {
