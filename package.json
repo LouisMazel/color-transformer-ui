@@ -36,19 +36,6 @@
     "gulp-babel": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.2",
-    "uglify-es": "^3.3.9",
-    "uglify-js": "^3.6.8"
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015"
-          ]
-        }
-      ]
-    ]
+    "uglify-es": "^3.3.9"
   }
 }
