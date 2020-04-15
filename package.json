@@ -1,6 +1,6 @@
 {
   "name": "color-transformer-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Tools to transform colors with Javascript",
   "main": "lib/index.min.js",
   "scripts": {
