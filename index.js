@@ -35,8 +35,8 @@ export const isColorName = (color) => {
   if (!color) throw new Error('isColorName: No color')
 
   const s = new Option().style
-  s.color = strColor
-  return s.color === strColor
+  s.color = color
+  return s.color === color
 }
 
 export const colorNameToHex = (color) => {
