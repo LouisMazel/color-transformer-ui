@@ -34,7 +34,9 @@ export const HexToRgba = (hex, coef) => {
 export const isColorName = (color) => {
   if (!color) throw new Error('isColorName: No color')
 
-  return !color.indexOf('nice') !== -1
+  const s = new Option().style
+  s.color = strColor
+  return s.color === strColor
 }
 
 export const colorNameToHex = (color) => {
