@@ -1,13 +1,20 @@
 {
   "name": "color-transformer-ui",
-  "version": "0.0.7",
+  "version": "1.0.0",
   "description": "Tools to transform colors with Javascript",
-  "main": "lib/index.min.js",
+  "main": "lib/app.js",
   "scripts": {
-    "lint": "eslint index.js",
-    "build": "gulp build",
-    "watch": "gulp",
-    "before-publish": "npm audit && npm run lint && npm i && npm run build"
+    "start": "node build/app.js",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest",
+    "typing": "tsc -p tsconfig.json --declaration --outDir types",
+    "build": "npm run build-ts",
+    "build-ts": "tsc -p tsconfig.json",
+    "watch-node": "nodemon",
+    "watch-ts": "npm run build-ts -- -w",
+    "serve": "concurrently -k -n \"Typescript,Node\" -p \"[{name}]\" -c \"blue,green\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "before-publish": "npm audit && npm run lint && npm i && npm run build && npm run test"
   },
   "files": [
     "lib"
@@ -29,13 +36,25 @@
   },
   "homepage": "https://github.com/LouisMazel/color-transformer-ui#readme",
   "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@babel/preset-env": "^7.12.7",
-    "eslint": "^6.8.0",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-uglify": "^3.0.2",
-    "uglify-es": "^3.3.9"
+    "@types/jest": "^26.0.16",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.10.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "tsconfig-paths-jest": "0.0.1",
+    "typescript": "^4.0.5"
   }
 }

@@ -1,33 +1,25 @@
-// http://eslint.org/docs/user-guide/configuring
-
+/* eslint-disable */
 module.exports = {
+  /* eslint-enable */
   env: {
-    es6: true,
     node: true,
-    browser: true
+    browser: true,
+    jest: true
   },
+  extends: ['node', 'prettier', 'plugin:@typescript-eslint/recommended'],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 6,
-    sourceType: 'module',
-    ecmaFeatures: {
-      jsx: true
-    }
+    ecmaVersion: 12,
+    sourceType: 'module'
   },
+  plugins: ['prettier', '@typescript-eslint', 'import'],
   rules: {
-    'generator-star-spacing': 0,
-    'arrow-parens': 0,
-    'prefer-const': 2,
-    'no-trailing-spaces': 'error',
-    'no-debugger': 0,
-    'no-extra-semi': 'error',
-    semi: [
-      'error',
-      'never'
-    ],
-    'no-var': 'error',
-    quotes: [
-      2,
-      'single'
-    ]
+    'prettier/prettier': 2
+  },
+  ignorePatterns: ['lib/**/*', 'node_modules/*'],
+  settings: {
+    'import/resolver': {
+      typescript: {} // this loads <rootdir>/tsconfig.json to eslint
+    }
   }
 }
