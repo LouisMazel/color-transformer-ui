@@ -1,4 +1,8 @@
 export default (color: string, percent: number): string => {
+  if (color.length < 7)
+    throw new Error(`[shade-color] color must be formatted "#FFFFFF" not like this "#FFF" - (${color})`)
+  if (!color.includes('#')) throw new Error(`[shade-color] color must be an HEX - ex: "#FFFFFF" - (${color})`)
+
   let R = parseInt(color.substring(1, 3), 16)
   let G = parseInt(color.substring(3, 5), 16)
   let B = parseInt(color.substring(5, 7), 16)

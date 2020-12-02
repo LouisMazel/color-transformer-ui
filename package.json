@@ -7,7 +7,7 @@
     "start": "node build/app.js",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest",
+    "test": "npm run build && jest",
     "typing": "tsc -p tsconfig.json --declaration --outDir types",
     "build": "npm run build-ts",
     "build-ts": "tsc -p tsconfig.json",
