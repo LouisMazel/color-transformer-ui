@@ -9,7 +9,7 @@ npm i color-transformer-ui -D
 ## Usage
 
 ```js
-import { ShadeColor, HexToRgba, isColorName, colorNameToHex } from 'color-transformer-ui'
+import { shadeColor, hexToRgba, isColorName, colorNameToHex } from 'color-transformer-ui'
 ```
 
 ## Contribution
